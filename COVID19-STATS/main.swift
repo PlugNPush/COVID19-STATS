@@ -16,7 +16,7 @@ APIConfiguration.current?.completionInMainThread = false
 print("Configuration terminée, téléchargement des données en cours...")
 
 //Téléchargement des données depuis le fichier JSON à retourner sous la forme data: [PCRStats]
-APIRequest("GET", path: "/confidential_pcr_test_source_hidden.json").execute([PCRStats].self) { data, status in
+APIRequest("GET", path: "/confidential_pcr_test_source_hidden_without_dupplicates.json").execute([PCRStats].self) { data, status in
     // On vérifie l'intégrité du contenu décodé et le code statut HTTP 200 OK
     if let data = data, status == .ok {
         // Le test d'intégrité a réusi, data contient maintenant toutes les données du JSON
